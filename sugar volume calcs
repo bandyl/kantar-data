@@ -1,0 +1,15 @@
+library(readr)
+data <- read.csv("~/Desktop/rkantar/kantar_r1.csv")
+
+salesvol <- data$sales_volume
+kcal <- data$kcal
+sugar <- data$sugars
+
+volkcal <- kcal*salesvol
+volsugar <- sugar*salesvol
+
+tonnesugar <-(salesvol*sugar)/100
+tonnesugar
+
+newdata <- cbind(data, tonnesugar)
+newdata
